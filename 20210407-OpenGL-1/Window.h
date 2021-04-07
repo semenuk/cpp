@@ -16,10 +16,10 @@
 class Window
 {
 public:
-	constexpr int DEFAULT_WIDTH = 1920;
-	constexpr int DEFAULT_HEIGHT = 1080;
-	constexpr int DEFAULT_X = SDL_WINDOWPOS_CENTERED_DISPLAY(1);
-	constexpr int DEFAULT_Y = SDL_WINDOWPOS_CENTERED_DISPLAY(1);
+	static constexpr int DEFAULT_WIDTH = 1920;
+	static constexpr int DEFAULT_HEIGHT = 1080;
+	static constexpr int DEFAULT_X = SDL_WINDOWPOS_CENTERED_DISPLAY(1);
+	static constexpr int DEFAULT_Y = SDL_WINDOWPOS_CENTERED_DISPLAY(1);
 
 protected:
 	std::shared_ptr<SDL_Window> _window; // Окно
@@ -32,6 +32,15 @@ public:
 
 	int height() const { return _height; }
 	int width() const  { return _width;  }
+
+	void main_loop();
+
+	virtual void setup() {}
+	virtual void setup_gl() {}
+	virtual void update() {}
+	virtual void render() {}
+	virtual void handle_event(const SDL_Event& event) {}
+	virtual void handle_keys(const Uint8 * keys) {}
 };
 
 #endif /* WINDOW_H_ */

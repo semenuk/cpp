@@ -34,3 +34,27 @@ Window::Window(int width, int height)
 		throw std::runtime_error(
 				"Не удалось создать контекст OpenGL: "s + SDL_GetError());
 }
+
+void Window::main_loop()
+{
+	setup();
+	setup_gl();
+
+	SDL_Event event;
+	auto keys = SDL_GetKeyboardState(nullptr);
+
+	for(;;) {
+		while (SDL_PollEvent(&event)) {
+			if (event.type == SDL_QUIT)
+				return;
+			handle_event(event);
+		}
+		handle_keys(keys);
+
+		// TODO: возможно, имеет смысл этот update() вызывать по таймеру
+		update();
+
+		render();
+		SDL_GL_SwapWindow(_window.get());
+	}
+}
