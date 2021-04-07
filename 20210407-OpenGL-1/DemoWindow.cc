@@ -20,5 +20,19 @@ void DemoWindow::setup_gl()
 
 void DemoWindow::render()
 {
-	glClear(GL_COLOR_BUFFER_BIT);
+	glClear(GL_COLOR_BUFFER_BIT); // Очистка
+
+	glBegin(GL_TRIANGLES);
+
+	/* glVertex???
+	 * 		   ^ количество координат (2, 3 или 4)
+	 * 		    ^ тип значений координат (d - double, f - float,
+	 * 		    	i - int, s - short)
+	 * 		     ^ v - значит, массив.
+	 */
+	glVertex2d(0.0, 0.8);
+	glVertex2d(0.8, -0.8);
+	glVertex2d(-0.8, -0.8);
+
+	glEnd();
 }
