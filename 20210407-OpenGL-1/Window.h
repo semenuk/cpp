@@ -21,8 +21,9 @@ public:
 	static constexpr int DEFAULT_X = SDL_WINDOWPOS_CENTERED_DISPLAY(1);
 	static constexpr int DEFAULT_Y = SDL_WINDOWPOS_CENTERED_DISPLAY(1);
 
-private:
+protected:
 	std::shared_ptr<SDL_Window> _window; // Окно
+private:
 	std::shared_ptr<void> _gl_context; // Контекст OpenGL
 	int _width, _height; // Ширина и высота окна
 
