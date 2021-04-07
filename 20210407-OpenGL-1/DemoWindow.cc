@@ -10,7 +10,7 @@
 DemoWindow::DemoWindow(int width, int height)
 : Window(width, height)
 {
-	SDL_SetWindowTitle(_window.get(), "OpenGL Demo Window");
+	set_title("OpenGL Demo Window");
 }
 
 void DemoWindow::setup_gl()
