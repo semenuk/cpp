@@ -15,6 +15,8 @@ DemoWindow::DemoWindow(int width, int height)
 
 void DemoWindow::setup_gl()
 {
+	glEnable(GL_DEPTH_TEST);
+
 	glClearColor(0.2f, 0.4f, 0.7f, 1.0f);
 
 	glMatrixMode(GL_PROJECTION);
@@ -28,7 +30,7 @@ void DemoWindow::setup_gl()
 
 void DemoWindow::render()
 {
-	glClear(GL_COLOR_BUFFER_BIT); // Очистка
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // Очистка
 
 	glLoadIdentity(); // MV = единичная матрица
 
@@ -70,7 +72,7 @@ void DemoWindow::render()
 	glVertex3d(-1.0, -1.0,  1.0);
 	glVertex3d(-1.0, 1.0,  1.0);
 
-	glColor3d(1.0, 1.0, 0.0);		// Боковая грань, синяя
+	glColor3d(1.0, 1.0, 0.0);		// Боковая грань, желтая
 	glVertex3d(1.0, -1.0, -1.0);
 	glVertex3d(1.0, 1.0, -1.0);
 	glVertex3d(1.0, 1.0,  1.0);
