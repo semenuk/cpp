@@ -52,6 +52,31 @@ void DemoWindow::render()
 	glVertex3d( 1.0,  1.0,  1.0);
 	glVertex3d(-1.0,  1.0,  1.0);
 
+	glColor3d(0.0, 1.0, 0.0);		// Боковая грань, зеленая
+	glVertex3d(-1.0,  1.0, -1.0);
+	glVertex3d( 1.0,  1.0, -1.0);
+	glVertex3d( 1.0,  1.0,  1.0);
+	glVertex3d(-1.0,  1.0,  1.0);
+
+	glColor3d(1.0, 0.0, 1.0);		// Боковая грань, фиолетовая
+	glVertex3d( 1.0, -1.0, -1.0);
+	glVertex3d(-1.0, -1.0, -1.0);
+	glVertex3d(-1.0, -1.0,  1.0);
+	glVertex3d( 1.0, -1.0,  1.0);
+
+	glColor3d(0.0, 0.0, 1.0);		// Боковая грань, синяя
+	glVertex3d( -1.0, 1.0, -1.0);
+	glVertex3d(-1.0, -1.0, -1.0);
+	glVertex3d(-1.0, -1.0,  1.0);
+	glVertex3d(-1.0, 1.0,  1.0);
+
+	glColor3d(1.0, 1.0, 0.0);		// Боковая грань, синяя
+	glVertex3d(1.0, -1.0, -1.0);
+	glVertex3d(1.0, 1.0, -1.0);
+	glVertex3d(1.0, 1.0,  1.0);
+	glVertex3d(1.0, -1.0,  1.0);
+
+
 	/* TODO: задание для самостоятельной работы
 	 * - Добавить оставшиеся грани куба
 	 * - Выяснить, почему куб в текущем виде отображается неправильно
@@ -76,7 +101,7 @@ void DemoWindow::render()
 
 void DemoWindow::update()
 {
-	_cube_angle += 1;
+	_cube_angle += 0.1;
 	if (_cube_angle >= 360.0)
 		_cube_angle -= 360.0;
 }

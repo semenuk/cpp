@@ -16,8 +16,8 @@
 class Window
 {
 public:
-	static constexpr int DEFAULT_WIDTH = 1920;
-	static constexpr int DEFAULT_HEIGHT = 1080;
+	static constexpr int DEFAULT_WIDTH = 1440;
+	static constexpr int DEFAULT_HEIGHT = 800;
 	static constexpr int DEFAULT_X = SDL_WINDOWPOS_CENTERED_DISPLAY(1);
 	static constexpr int DEFAULT_Y = SDL_WINDOWPOS_CENTERED_DISPLAY(1);
 
