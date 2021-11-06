@@ -12,6 +12,8 @@
 
 class DemoWindow final : public Window
 {
+private:
+	void render_cube();
 protected:
 	double _cube_angle { 0. };
 public:
